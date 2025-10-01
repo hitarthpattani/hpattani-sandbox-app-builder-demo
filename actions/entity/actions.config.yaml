@@ -1,0 +1,36 @@
+delete:
+  function: delete/index.js
+  web: 'yes'
+  runtime: nodejs:18
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+list:
+  function: list/index.js
+  web: 'yes'
+  runtime: nodejs:18
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+load:
+  function: load/index.js
+  web: 'yes'
+  runtime: nodejs:18
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+save:
+  function: save/index.js
+  web: 'yes'
+  runtime: nodejs:18
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true

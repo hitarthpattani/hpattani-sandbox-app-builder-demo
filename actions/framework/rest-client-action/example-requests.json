@@ -1,0 +1,238 @@
+{
+  "examples": {
+    "basic_get": {
+      "description": "Simple GET request to fetch a post",
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/1",
+        "method": "GET"
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://jsonplaceholder.typicode.com/posts/1\", \"method\": \"GET\"}'"
+    },
+
+    "create_post": {
+      "description": "POST request to create a new post",
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "method": "POST",
+        "body": {
+          "title": "My New Post",
+          "body": "This is the content of my post created via App Builder",
+          "userId": 1
+        }
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://jsonplaceholder.typicode.com/posts\", \"method\": \"POST\", \"body\": {\"title\": \"My New Post\", \"body\": \"This is the content\", \"userId\": 1}}'"
+    },
+
+    "update_post": {
+      "description": "PUT request to update an existing post",
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/1",
+        "method": "PUT",
+        "body": {
+          "id": 1,
+          "title": "Updated Post Title",
+          "body": "This post has been updated via Adobe App Builder",
+          "userId": 1
+        }
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://jsonplaceholder.typicode.com/posts/1\", \"method\": \"PUT\", \"body\": {\"id\": 1, \"title\": \"Updated Post Title\", \"body\": \"Updated content\", \"userId\": 1}}'"
+    },
+
+    "delete_post": {
+      "description": "DELETE request to remove a post",
+      "request": {
+        "url": "https://jsonplaceholder.typicode.com/posts/1",
+        "method": "DELETE"
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://jsonplaceholder.typicode.com/posts/1\", \"method\": \"DELETE\"}'"
+    },
+
+    "github_user": {
+      "description": "GET request to GitHub API with authentication and custom headers",
+      "request": {
+        "url": "https://api.github.com/user",
+        "method": "GET",
+        "requestHeaders": {
+          "Accept": "application/vnd.github.v3+json",
+          "X-GitHub-Api-Version": "2022-11-28"
+        }
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -H \"Authorization: Bearer ghp_your_github_token\" -d '{\"url\": \"https://api.github.com/user\", \"method\": \"GET\", \"requestHeaders\": {\"Accept\": \"application/vnd.github.v3+json\"}}'"
+    },
+
+    "weather_api": {
+      "description": "GET request to weather API with API key in headers",
+      "request": {
+        "url": "https://api.openweathermap.org/data/2.5/weather?q=San Francisco,US",
+        "method": "GET",
+        "requestHeaders": {
+          "X-API-Key": "your-api-key-here"
+        }
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://api.openweathermap.org/data/2.5/weather?q=San Francisco,US\", \"method\": \"GET\", \"requestHeaders\": {\"X-API-Key\": \"your-api-key\"}}'"
+    },
+
+    "commerce_api": {
+      "description": "GET request to Adobe Commerce REST API with authentication",
+      "request": {
+        "url": "https://your-commerce-store.com/rest/V1/products?searchCriteria[pageSize]=5",
+        "method": "GET",
+        "requestHeaders": {
+          "Accept": "application/json"
+        }
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -H \"Authorization: Bearer your-commerce-token\" -d '{\"url\": \"https://your-commerce-store.com/rest/V1/products?searchCriteria[pageSize]=5\", \"method\": \"GET\"}'"
+    },
+
+    "json_api": {
+      "description": "POST request with JSON API specification headers",
+      "request": {
+        "url": "https://api.example.com/articles",
+        "method": "POST",
+        "requestHeaders": {
+          "Content-Type": "application/vnd.api+json",
+          "Accept": "application/vnd.api+json"
+        },
+        "body": {
+          "data": {
+            "type": "articles",
+            "attributes": {
+              "title": "JSON API Example",
+              "content": "This is an example of JSON API format"
+            },
+            "relationships": {
+              "author": {
+                "data": { "type": "people", "id": "1" }
+              }
+            }
+          }
+        }
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://api.example.com/articles\", \"method\": \"POST\", \"requestHeaders\": {\"Content-Type\": \"application/vnd.api+json\"}, \"body\": {\"data\": {\"type\": \"articles\", \"attributes\": {\"title\": \"JSON API Example\"}}}}'"
+    },
+
+    "health_check": {
+      "description": "Simple health check endpoint test",
+      "request": {
+        "url": "https://httpstat.us/200",
+        "method": "GET"
+      },
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://httpstat.us/200\", \"method\": \"GET\"}'"
+    },
+
+    "error_simulation": {
+      "description": "Test error handling with a 404 endpoint",
+      "request": {
+        "url": "https://httpstat.us/404",
+        "method": "GET"
+      },
+      "expected_error": "HTTP Error: Not Found",
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://httpstat.us/404\", \"method\": \"GET\"}'"
+    },
+
+    "slow_endpoint": {
+      "description": "Test timeout handling with a slow endpoint",
+      "request": {
+        "url": "https://httpstat.us/200?sleep=5000",
+        "method": "GET"
+      },
+      "note": "This endpoint will sleep for 5 seconds before responding",
+      "curl": "curl -X POST https://your-action-url -H \"Content-Type: application/json\" -d '{\"url\": \"https://httpstat.us/200?sleep=5000\", \"method\": \"GET\"}'"
+    }
+  },
+
+  "test_scenarios": {
+    "authentication_tests": {
+      "description": "Test various authentication methods",
+      "scenarios": [
+        {
+          "name": "Bearer Token",
+          "headers": ["Authorization: Bearer your-token"]
+        },
+        {
+          "name": "API Key Header",
+          "requestHeaders": { "X-API-Key": "your-api-key" }
+        },
+        {
+          "name": "Basic Auth",
+          "headers": ["Authorization: Basic base64(username:password)"]
+        }
+      ]
+    },
+
+    "content_type_tests": {
+      "description": "Test different content types",
+      "scenarios": [
+        {
+          "name": "JSON",
+          "requestHeaders": { "Content-Type": "application/json" }
+        },
+        {
+          "name": "JSON API",
+          "requestHeaders": { "Content-Type": "application/vnd.api+json" }
+        },
+        {
+          "name": "XML",
+          "requestHeaders": { "Content-Type": "application/xml" }
+        },
+        {
+          "name": "Form Data",
+          "requestHeaders": { "Content-Type": "application/x-www-form-urlencoded" }
+        }
+      ]
+    },
+
+    "error_handling_tests": {
+      "description": "Test error scenarios",
+      "scenarios": [
+        {
+          "name": "400 Bad Request",
+          "url": "https://httpstat.us/400"
+        },
+        {
+          "name": "401 Unauthorized",
+          "url": "https://httpstat.us/401"
+        },
+        {
+          "name": "404 Not Found",
+          "url": "https://httpstat.us/404"
+        },
+        {
+          "name": "500 Internal Server Error",
+          "url": "https://httpstat.us/500"
+        },
+        {
+          "name": "503 Service Unavailable",
+          "url": "https://httpstat.us/503"
+        }
+      ]
+    }
+  },
+
+  "performance_tests": {
+    "description": "Test performance with different response sizes",
+    "small_response": {
+      "url": "https://jsonplaceholder.typicode.com/posts/1",
+      "expected_size": "< 1KB"
+    },
+    "medium_response": {
+      "url": "https://jsonplaceholder.typicode.com/posts",
+      "expected_size": "< 10KB"
+    },
+    "large_response": {
+      "url": "https://jsonplaceholder.typicode.com/photos",
+      "expected_size": "> 100KB"
+    }
+  },
+
+  "usage_notes": [
+    "Replace 'https://your-action-url' with your actual Adobe App Builder action URL",
+    "Replace authentication tokens with your actual tokens",
+    "Modify URLs and parameters according to your testing needs",
+    "Use the health_check example to verify your action is working correctly",
+    "Use error_simulation to test error handling capabilities",
+    "The action automatically includes standard headers like Content-Type and User-Agent",
+    "Custom headers can be added using the 'requestHeaders' parameter",
+    "The action returns comprehensive request/response information for debugging"
+  ]
+}

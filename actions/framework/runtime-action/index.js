@@ -1,0 +1,27 @@
+/*
+* <license header>
+*/
+
+/**
+ * This is a sample action showcasing how to access an external API
+ *
+ * Note:
+ * You might want to disable authentication and authorization checks against Adobe Identity Management System for a generic action. In that case:
+ *   - Remove the require-adobe-auth annotation for this action in the manifest.yml of your application
+ *   - Remove the Authorization header from the array passed in checkMissingRequestInputs
+ *   - The two steps above imply that every client knowing the URL to this deployed action will be able to invoke it without any authentication and authorization checks against Adobe Identity Management System
+ *   - Make sure to validate these changes against your security requirements before deploying the action
+ */
+
+const {RuntimeAction, HttpMethod, RuntimeActionResponse} = require("@adobe-commerce/aio-toolkit");
+
+exports.main = RuntimeAction.execute(
+    'runtime-action',
+    [HttpMethod.GET, HttpMethod.POST],
+    ['data.value.attribute_code'],
+    ['authorization'],
+    async () => {
+        return RuntimeActionResponse.success("RUNTIME ACTION");
+    }
+);
+

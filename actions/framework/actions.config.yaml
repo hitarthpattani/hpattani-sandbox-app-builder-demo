@@ -1,0 +1,78 @@
+bearer-token-action:
+  function: bearer-token-action/index.js
+  web: 'yes'
+  runtime: nodejs:20
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+commerce-basic-action:
+  function: commerce-basic-action/index.js
+  web: 'yes'
+  runtime: nodejs:20
+  inputs:
+    LOG_LEVEL: debug
+    COMMERCE_PAAS_BASE_URL: $COMMERCE_PAAS_BASE_URL
+    COMMERCE_USERNAME: $COMMERCE_USERNAME
+    COMMERCE_PASSWORD: $COMMERCE_PASSWORD
+  annotations:
+    require-adobe-auth: true
+    final: true
+commerce-ims-action:
+  function: commerce-ims-action/index.js
+  web: 'yes'
+  runtime: nodejs:20
+  inputs:
+    LOG_LEVEL: debug
+    COMMERCE_ACCS_BASE_URL: $COMMERCE_ACCS_BASE_URL
+    COMMERCE_IMS_CLIENT_ID: $COMMERCE_IMS_CLIENT_ID
+    COMMERCE_IMS_CLIENT_SECRET: $COMMERCE_IMS_CLIENT_SECRET
+    COMMERCE_IMS_TECHNICAL_ACCOUNT_ID: $COMMERCE_IMS_TECHNICAL_ACCOUNT_ID
+    COMMERCE_IMS_TECHNICAL_ACCOUNT_EMAIL: $COMMERCE_IMS_TECHNICAL_ACCOUNT_EMAIL
+    COMMERCE_IMS_ORG_ID: $COMMERCE_IMS_ORG_ID
+    COMMERCE_IMS_SCOPES: $COMMERCE_IMS_SCOPES
+  annotations:
+    require-adobe-auth: true
+    final: true
+commerce-oauth-action:
+  function: commerce-oauth-action/index.js
+  web: 'yes'
+  runtime: nodejs:20
+  inputs:
+    LOG_LEVEL: debug
+    COMMERCE_PAAS_BASE_URL: $COMMERCE_PAAS_BASE_URL
+    COMMERCE_CONSUMER_KEY: $COMMERCE_CONSUMER_KEY
+    COMMERCE_CONSUMER_SECRET: $COMMERCE_CONSUMER_SECRET
+    COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+    COMMERCE_ACCESS_TOKEN_SECRET: $COMMERCE_ACCESS_TOKEN_SECRET
+  annotations:
+    require-adobe-auth: true
+    final: true
+graphql-action:
+  function: graphql-action/index.js
+  web: 'yes'
+  runtime: nodejs:20
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+rest-client-action:
+  function: rest-client-action/index.js
+  web: 'yes'
+  runtime: nodejs:22
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+runtime-action:
+  function: runtime-action/index.js
+  web: 'yes'
+  runtime: nodejs:22
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true

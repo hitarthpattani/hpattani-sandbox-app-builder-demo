@@ -1,0 +1,13 @@
+shipping_carriers:
+  - carrier:
+      code: 'UPS'
+      title: 'United Postal Service'
+      stores:
+        - default
+      countries:
+        - US
+        - CA
+      sort_order: 10
+      active: true
+      tracking_available: true
+      shipping_labels_available: true

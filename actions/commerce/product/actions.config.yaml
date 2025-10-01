@@ -1,0 +1,27 @@
+consumer:
+  function: consumer/index.js
+  web: 'no'
+  runtime: nodejs:22
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+deleted:
+  function: deleted/index.js
+  web: 'no'
+  runtime: nodejs:22
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true
+saved:
+  function: saved/index.js
+  web: 'no'
+  runtime: nodejs:22
+  inputs:
+    LOG_LEVEL: debug
+  annotations:
+    require-adobe-auth: true
+    final: true

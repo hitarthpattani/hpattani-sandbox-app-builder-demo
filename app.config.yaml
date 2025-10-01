@@ -1,0 +1,21 @@
+application:
+  actions: actions
+  web: web-src
+  runtimeManifest:
+    packages:
+      commerce-product:
+        license: Apache-2.0
+        actions:
+          $include: actions/commerce/product/actions.config.yaml
+      entity:
+        license: Apache-2.0
+        actions:
+          $include: actions/entity/actions.config.yaml
+      framework:
+        license: Apache-2.0
+        actions:
+          $include: actions/framework/actions.config.yaml
+      original:
+        license: Apache-2.0
+        actions:
+          $include: actions/original/actions.config.yaml
