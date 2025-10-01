@@ -21,13 +21,12 @@ exports.main = RuntimeAction.execute(
     [],
     ['authorization'],
     async (params) => {
-        console.log(params);
         const adobeCommerceClient = new AdobeCommerceClient(
-            params.COMMERCE_PAAS_BASE_URL,
+            params.PAAS_BASE_URL,
             new BasicAuthConnection(
-                params.COMMERCE_PAAS_BASE_URL,
-                params.COMMERCE_USERNAME,
-                params.COMMERCE_PASSWORD
+                params.PAAS_BASE_URL,
+                params.AUTH_USERNAME,
+                params.AUTH_PASSWORD
             )
         );
 

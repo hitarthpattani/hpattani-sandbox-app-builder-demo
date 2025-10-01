@@ -13,14 +13,14 @@ const ShippingCarriers = require("./class");
 async function index () {
     try {
         const adobeCommerceClient = new AdobeCommerceClient(
-            process?.env?.COMMERCE_ACCS_BASE_URL || '',
+            process?.env?.SAAS_BASE_URL || '',
             new ImsConnection(
-                process?.env?.COMMERCE_IMS_CLIENT_ID || '',
-                process?.env?.COMMERCE_IMS_CLIENT_SECRET || '',
-                process?.env?.COMMERCE_IMS_TECHNICAL_ACCOUNT_ID || '',
-                process?.env?.COMMERCE_IMS_TECHNICAL_ACCOUNT_EMAIL || '',
-                process?.env?.COMMERCE_IMS_ORG_ID || '',
-                process?.env?.COMMERCE_IMS_SCOPES?.split(", ") || []
+                process?.env?.OAUTH_CLIENT_ID || '',
+                process?.env?.OAUTH_CLIENT_SECRET || '',
+                process?.env?.OAUTH_TECHNICAL_ACCOUNT_ID || '',
+                process?.env?.OAUTH_TECHNICAL_ACCOUNT_EMAIL || '',
+                process?.env?.OAUTH_ORG_ID || '',
+                process?.env?.OAUTH_SCOPES?.split(", ") || []
             )
         );
 

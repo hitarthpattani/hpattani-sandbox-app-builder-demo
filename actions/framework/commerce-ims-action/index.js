@@ -22,14 +22,14 @@ exports.main = RuntimeAction.execute(
     ['authorization'],
     async (params) => {
         const adobeCommerceClient = new AdobeCommerceClient(
-            params.COMMERCE_ACCS_BASE_URL || '',
+            params.SAAS_BASE_URL || '',
             new ImsConnection(
-                params.COMMERCE_IMS_CLIENT_ID || '',
-                params.COMMERCE_IMS_CLIENT_SECRET || '',
-                params.COMMERCE_IMS_TECHNICAL_ACCOUNT_ID || '',
-                params.COMMERCE_IMS_TECHNICAL_ACCOUNT_EMAIL || '',
-                params.COMMERCE_IMS_ORG_ID || '',
-                params.COMMERCE_IMS_SCOPES?.split(", ") || []
+                params.OAUTH_CLIENT_ID || '',
+                params.OAUTH_CLIENT_SECRET || '',
+                params.OAUTH_TECHNICAL_ACCOUNT_ID || '',
+                params.OAUTH_TECHNICAL_ACCOUNT_EMAIL || '',
+                params.OAUTH_ORG_ID || '',
+                params.OAUTH_SCOPES?.split(", ") || []
             )
         );
 
