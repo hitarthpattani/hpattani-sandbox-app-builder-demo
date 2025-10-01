@@ -1,4 +1,4 @@
-/* 
+/*
 * <license header>
 */
 
@@ -56,9 +56,13 @@ function bootstrapInExcShell () {
       org: imsOrg,
       token: imsToken
     }
+    let actionCallHeaders = {
+      Authorization: `Bearer ${imsToken}`,
+      'x-gw-ims-org-id': imsOrg
+    };
     // render the actual react application and pass along the runtime and ims objects to make it available to the App
     ReactDOM.render(
-      <App runtime={runtime} ims={ims} />,
+      <App runtime={runtime} ims={ims} actionCallHeaders={actionCallHeaders} />,
       document.getElementById('root')
     )
   })
