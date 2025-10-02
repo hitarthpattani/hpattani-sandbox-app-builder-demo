@@ -1,0 +1,32 @@
+providers:
+  - key: commerce
+    label: Hitarth Sandbox - ACCS
+    description: Commerce Provider that will receive events from Commerce SaaS Instance
+    docsUrl: null
+    registrations:
+      - key: product
+        label: Commerce Product Sync
+        description: Commerce Product Sync
+        events:
+          - eventCode: com.adobe.commerce.observer.catalog_product_delete_commit_after
+            runtimeAction: commerce-product/consumer
+            deliveryType: webhook
+            sampleEventTemplate:
+              value:
+                id: 2
+                sku: "24-MB01"
+                name: Joust Duffle Bag
+                created_at: "2024-06-12 16:31:43"
+                updated_at: "2024-08-05 10:03:49"
+                description: Comfortable sporty duffel bag
+          - eventCode: com.adobe.commerce.observer.catalog_product_save_commit_after
+            runtimeAction: commerce-product/consumer
+            deliveryType: webhook
+            sampleEventTemplate:
+              value:
+                id: 2
+                sku: "24-MB01"
+                name: Joust Duffle Bag
+                created_at: "2024-06-12 16:31:43"
+                updated_at: "2024-08-05 10:03:49"
+                description: Comfortable sporty duffel bag

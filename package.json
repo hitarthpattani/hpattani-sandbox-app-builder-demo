@@ -38,7 +38,8 @@
     "e2e": "jest --collectCoverage=false --testRegex ./e2e",
     "lint": "eslint --ignore-pattern web-src --no-error-on-unmatched-pattern test src actions",
     "lint:fix": "npm run lint -- --fix",
-    "shipping-carriers": "node --no-warnings -e 'require(\"./scripts/shipping-carriers/index.js\").main()'"
+    "shipping-carriers": "node --no-warnings -e 'require(\"./scripts/shipping-carriers/index.js\").main()'",
+    "onboard-events": "node --no-warnings -e 'require(\"./scripts/onboard-events/index.js\").main()'"
   },
   "engines": {
     "node": ">=18"
