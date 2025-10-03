@@ -31,7 +31,7 @@ exports.main = RuntimeAction.execute(
             )
         );
 
-        const list = await adobeCommerceClient.get(`rest/V1/products/attributes?searchCriteria=`);
+        const list = await adobeCommerceClient.get(`V1/products/attributes?searchCriteria=&fields=items[attribute_code,default_frontend_label,options[value,label]]`);
         return RuntimeActionResponse.success(list);
     }
 );
